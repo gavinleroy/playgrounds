@@ -7,7 +7,8 @@ fn double(x: u32) -> u32{
 fn main() {
     let mut input_text = String::new();
     io::stdin()
-        .read_line(&mut input_text);
+        .read_line(&mut input_text)
+        .expect("Failed to read line");
 
     let trimmed = input_text.trim();
     match trimmed.parse::<u32>() {
