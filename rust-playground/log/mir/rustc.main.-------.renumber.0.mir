@@ -1,0 +1,562 @@
+// MIR for `main`
+// source = MirSource { def_id: DefId(0/0:4 ~ hello_world[8787]::main[0]), promoted: None }
+// pass_name = renumber
+// disambiguator = 0
+
+fn main() -> (){
+    let mut _0: ();                      // return place
+    scope 1 {
+        scope 3 {
+            let _19: u32;                // "i" in scope 3 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:11:12: 11:13
+            let _69: &'130rv &'131rv str; // "arg0" in scope 3 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:1:1: 1:1
+            scope 5 {
+                let _38: &'98rv u32;     // "arg0" in scope 5 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:1:1: 1:1
+                scope 6 {
+                }
+            }
+            scope 7 {
+            }
+        }
+        scope 4 {
+            let _10: &'69rv str;         // "trimmed" in scope 4 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:9:9: 9:16
+        }
+    }
+    scope 2 {
+        let mut _1: std::string::String; // "input_text" in scope 2 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:4:9: 4:23
+    }
+    let mut _2: usize;
+    let mut _3: std::result::Result<usize, std::io::Error>;
+    let mut _4: &'64rv std::io::Stdin;
+    let mut _5: std::io::Stdin;
+    let mut _6: &'65rv mut std::string::String;
+    let mut _7: &'66rv mut std::string::String;
+    let mut _8: &'67rv str;
+    let mut _9: &'68rv str;
+    let mut _11: &'70rv str;
+    let mut _12: &'71rv str;
+    let mut _13: &'72rv std::string::String;
+    let mut _14: ();
+    let mut _15: std::result::Result<u32, std::num::ParseIntError>;
+    let mut _16: &'73rv str;
+    let mut _17: isize;
+    let mut _18: &'74rv std::result::Result<u32, std::num::ParseIntError>;
+    let mut _20: isize;
+    let mut _21: std::fmt::Arguments<'75rv>;
+    let mut _22: &'76rv [&'77rv str];
+    let mut _23: &'78rv [&'79rv str; 2];
+    let mut _24: &'80rv [&'81rv str; 2];
+    let mut _25: [&'82rv str; 2];
+    let mut _26: &'83rv str;
+    let mut _27: &'84rv str;
+    let mut _28: &'85rv str;
+    let mut _29: &'86rv str;
+    let mut _30: &'87rv [std::fmt::ArgumentV1<'88rv>];
+    let mut _31: &'89rv [std::fmt::ArgumentV1<'90rv>; 1];
+    let mut _32: &'91rv [std::fmt::ArgumentV1<'92rv>; 1];
+    let mut _33: [std::fmt::ArgumentV1<'93rv>; 1];
+    let mut _34: (&'94rv u32,);
+    let mut _35: &'95rv u32;
+    let mut _36: u8;
+    let mut _37: &'96rv (&'97rv u32,);
+    let mut _39: std::fmt::ArgumentV1<'99rv>;
+    let mut _40: &'100rv u32;
+    let mut _41: for<'r, 's, 't0> fn(&'r u32, &'s mut std::fmt::Formatter<'t0>) -> std::result::Result<(), std::fmt::Error>;
+    let mut _42: &'101rv [std::fmt::rt::v1::Argument];
+    let mut _43: &'102rv [std::fmt::rt::v1::Argument; 1];
+    let mut _44: &'103rv [std::fmt::rt::v1::Argument; 1];
+    let mut _45: [std::fmt::rt::v1::Argument; 1];
+    let mut _46: std::fmt::rt::v1::Argument;
+    let mut _47: std::fmt::rt::v1::Position;
+    let mut _48: std::fmt::rt::v1::FormatSpec;
+    let mut _49: std::fmt::rt::v1::Alignment;
+    let mut _50: std::fmt::rt::v1::Count;
+    let mut _51: std::fmt::rt::v1::Count;
+    let mut _52: std::fmt::Arguments<'104rv>;
+    let mut _53: &'105rv [&'106rv str];
+    let mut _54: &'107rv [&'108rv str; 2];
+    let mut _55: &'109rv [&'110rv str; 2];
+    let mut _56: [&'111rv str; 2];
+    let mut _57: &'112rv str;
+    let mut _58: &'113rv str;
+    let mut _59: &'114rv str;
+    let mut _60: &'115rv str;
+    let mut _61: &'116rv [std::fmt::ArgumentV1<'117rv>];
+    let mut _62: &'118rv [std::fmt::ArgumentV1<'119rv>; 1];
+    let mut _63: &'120rv [std::fmt::ArgumentV1<'121rv>; 1];
+    let mut _64: [std::fmt::ArgumentV1<'122rv>; 1];
+    let mut _65: (&'123rv &'124rv str,);
+    let mut _66: &'125rv &'126rv str;
+    let mut _67: u8;
+    let mut _68: &'127rv (&'128rv &'129rv str,);
+    let mut _70: std::fmt::ArgumentV1<'132rv>;
+    let mut _71: &'133rv &'134rv str;
+    let mut _72: for<'r, 's, 't0> fn(&'r &'135rv str, &'s mut std::fmt::Formatter<'t0>) -> std::result::Result<(), std::fmt::Error>;
+    let mut _73: &'136rv [std::fmt::rt::v1::Argument];
+    let mut _74: &'137rv [std::fmt::rt::v1::Argument; 1];
+    let mut _75: &'138rv [std::fmt::rt::v1::Argument; 1];
+    let mut _76: [std::fmt::rt::v1::Argument; 1];
+    let mut _77: std::fmt::rt::v1::Argument;
+    let mut _78: std::fmt::rt::v1::Position;
+    let mut _79: std::fmt::rt::v1::FormatSpec;
+    let mut _80: std::fmt::rt::v1::Alignment;
+    let mut _81: std::fmt::rt::v1::Count;
+    let mut _82: std::fmt::rt::v1::Count;
+    let mut _83: &'139rv [std::fmt::rt::v1::Argument; 1];
+    let mut _84: &'140rv [&'141rv str; 2];
+    let mut _85: &'142rv [std::fmt::rt::v1::Argument; 1];
+    let mut _86: &'143rv [&'144rv str; 2];
+
+    bb0: {                              
+        StorageLive(_1);                 // bb0[0]: scope 0 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:4:9: 4:23
+        _1 = const std::string::String::new() -> [return: bb2, unwind: bb1]; // bb0[1]: scope 0 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:4:26: 4:39
+                                         // ty::Const
+                                         // + ty: fn() -> std::string::String {std::string::String::new}
+                                         // + val: Value(Scalar(Bits { defined: 0, bits: 0 }))
+                                         // mir::Constant
+                                         // + span: /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:4:26: 4:37
+                                         // + ty: fn() -> std::string::String {std::string::String::new}
+                                         // + literal: const std::string::String::new
+    }
+
+    bb1: {                               // cleanup
+        resume;                          // bb1[0]: scope 0 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:3:1: 14:2
+    }
+
+    bb2: {                              
+        StorageLive(_3);                 // bb2[0]: scope 1 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:5:5: 6:36
+        StorageLive(_4);                 // bb2[1]: scope 1 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:5:5: 5:16
+        StorageLive(_5);                 // bb2[2]: scope 1 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:5:5: 5:16
+        _5 = const std::io::stdin() -> [return: bb3, unwind: bb5]; // bb2[3]: scope 1 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:5:5: 5:16
+                                         // ty::Const
+                                         // + ty: fn() -> std::io::Stdin {std::io::stdin}
+                                         // + val: Value(Scalar(Bits { defined: 0, bits: 0 }))
+                                         // mir::Constant
+                                         // + span: /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:5:5: 5:14
+                                         // + ty: fn() -> std::io::Stdin {std::io::stdin}
+                                         // + literal: const std::io::stdin
+    }
+
+    bb3: {                              
+        _4 = &'2rv _5;                   // bb3[0]: scope 1 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:5:5: 5:16
+        StorageLive(_6);                 // bb3[1]: scope 1 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:6:20: 6:35
+        StorageLive(_7);                 // bb3[2]: scope 1 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:6:20: 6:35
+        _7 = &'3rv mut _1;               // bb3[3]: scope 1 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:6:20: 6:35
+        _6 = &'4rv mut (*_7);            // bb3[4]: scope 1 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:6:20: 6:35
+        _3 = const std::io::Stdin::read_line(move _4, move _6) -> [return: bb6, unwind: bb8]; // bb3[5]: scope 1 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:5:5: 6:36
+                                         // ty::Const
+                                         // + ty: for<'r, 's> fn(&'r std::io::Stdin, &'s mut std::string::String) -> std::result::Result<usize, std::io::Error> {std::io::Stdin::read_line}
+                                         // + val: Value(Scalar(Bits { defined: 0, bits: 0 }))
+                                         // mir::Constant
+                                         // + span: /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:5:5: 6:36
+                                         // + ty: for<'r, 's> fn(&'r std::io::Stdin, &'s mut std::string::String) -> std::result::Result<usize, std::io::Error> {std::io::Stdin::read_line}
+                                         // + literal: const std::io::Stdin::read_line
+    }
+
+    bb4: {                               // cleanup
+        drop(_1) -> bb1;                 // bb4[0]: scope 0 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:14:1: 14:2
+    }
+
+    bb5: {                               // cleanup
+        nop;                             // bb5[0]: scope 1 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:5:5: 6:36
+        nop;                             // bb5[1]: scope 1 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:5:5: 7:45
+        goto -> bb4;                     // bb5[2]: scope 1 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:5:5: 7:45
+    }
+
+    bb6: {                              
+        nop;                             // bb6[0]: scope 1 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:5:5: 6:36
+        StorageDead(_6);                 // bb6[1]: scope 1 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:6:35: 6:36
+        StorageDead(_4);                 // bb6[2]: scope 1 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:6:35: 6:36
+        StorageLive(_8);                 // bb6[3]: scope 1 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:7:17: 7:44
+        StorageLive(_9);                 // bb6[4]: scope 1 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:7:17: 7:44
+        _9 = const "failed to read from stdin"; // bb6[5]: scope 1 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:7:17: 7:44
+                                         // ty::Const
+                                         // + ty: &'6rv str
+                                         // + val: Value(ScalarPair(Ptr(Pointer { alloc_id: AllocId(0), offset: Size { raw: 0 } }), Bits { defined: 64, bits: 25 }))
+                                         // mir::Constant
+                                         // + span: /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:7:17: 7:44
+                                         // + ty: &'5rv str
+                                         // + literal: const "failed to read from stdin"
+        _8 = &'7rv (*_9);                // bb6[6]: scope 1 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:7:17: 7:44
+        _2 = const <std::result::Result<T, E>>::expect(move _3, move _8) -> [return: bb9, unwind: bb10]; // bb6[7]: scope 1 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:5:5: 7:45
+                                         // ty::Const
+                                         // + ty: for<'r> fn(std::result::Result<usize, std::io::Error>, &'r str) -> usize {<std::result::Result<T, E>><usize, std::io::Error>::expect}
+                                         // + val: Value(Scalar(Bits { defined: 0, bits: 0 }))
+                                         // mir::Constant
+                                         // + span: /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:5:5: 7:45
+                                         // + ty: for<'r> fn(std::result::Result<usize, std::io::Error>, &'r str) -> usize {<std::result::Result<T, E>><usize, std::io::Error>::expect}
+                                         // + literal: const <std::result::Result<T, E>>::expect
+    }
+
+    bb7: {                               // cleanup
+        drop(_5) -> bb4;                 // bb7[0]: scope 1 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:7:45: 7:46
+    }
+
+    bb8: {                               // cleanup
+        nop;                             // bb8[0]: scope 1 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:5:5: 6:36
+        nop;                             // bb8[1]: scope 1 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:5:5: 7:45
+        goto -> bb7;                     // bb8[2]: scope 1 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:5:5: 7:45
+    }
+
+    bb9: {                              
+        nop;                             // bb9[0]: scope 1 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:5:5: 7:45
+        StorageDead(_8);                 // bb9[1]: scope 1 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:7:44: 7:45
+        drop(_3) -> [return: bb11, unwind: bb7]; // bb9[2]: scope 1 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:7:44: 7:45
+    }
+
+    bb10: {                              // cleanup
+        nop;                             // bb10[0]: scope 1 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:5:5: 7:45
+        drop(_3) -> bb7;                 // bb10[1]: scope 1 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:7:44: 7:45
+    }
+
+    bb11: {                             
+        StorageDead(_3);                 // bb11[0]: scope 1 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:7:44: 7:45
+        StorageDead(_9);                 // bb11[1]: scope 1 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:7:45: 7:46
+        StorageDead(_7);                 // bb11[2]: scope 1 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:7:45: 7:46
+        drop(_5) -> [return: bb12, unwind: bb4]; // bb11[3]: scope 1 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:7:45: 7:46
+    }
+
+    bb12: {                             
+        StorageDead(_5);                 // bb12[0]: scope 1 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:7:45: 7:46
+        StorageLive(_10);                // bb12[1]: scope 1 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:9:9: 9:16
+        StorageLive(_11);                // bb12[2]: scope 1 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:9:19: 9:29
+        StorageLive(_12);                // bb12[3]: scope 1 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:9:19: 9:29
+        StorageLive(_13);                // bb12[4]: scope 1 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:9:19: 9:29
+        _13 = &'8rv _1;                  // bb12[5]: scope 1 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:9:19: 9:29
+        _12 = const std::ops::Deref::deref(move _13) -> [return: bb13, unwind: bb14]; // bb12[6]: scope 1 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:9:19: 9:29
+                                         // ty::Const
+                                         // + ty: for<'r> fn(&'r std::string::String) -> &'r <std::string::String as std::ops::Deref>::Target {<std::string::String as std::ops::Deref>::deref}
+                                         // + val: Value(Scalar(Bits { defined: 0, bits: 0 }))
+                                         // mir::Constant
+                                         // + span: /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:9:19: 9:29
+                                         // + ty: for<'r> fn(&'r std::string::String) -> &'r <std::string::String as std::ops::Deref>::Target {<std::string::String as std::ops::Deref>::deref}
+                                         // + literal: const std::ops::Deref::deref
+    }
+
+    bb13: {                             
+        _11 = &'9rv (*_12);              // bb13[0]: scope 1 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:9:19: 9:29
+        StorageDead(_13);                // bb13[1]: scope 1 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:9:28: 9:29
+        _10 = const core::str::<impl str>::trim(move _11) -> [return: bb15, unwind: bb14]; // bb13[2]: scope 1 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:9:19: 9:36
+                                         // ty::Const
+                                         // + ty: for<'r> fn(&'r str) -> &'r str {core::str::<impl str>::trim}
+                                         // + val: Value(Scalar(Bits { defined: 0, bits: 0 }))
+                                         // mir::Constant
+                                         // + span: /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:9:19: 9:36
+                                         // + ty: for<'r> fn(&'r str) -> &'r str {core::str::<impl str>::trim}
+                                         // + literal: const core::str::<impl str>::trim
+    }
+
+    bb14: {                              // cleanup
+        nop;                             // bb14[0]: scope 1 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:3:11: 14:2
+        goto -> bb4;                     // bb14[1]: scope 1 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:3:11: 14:2
+    }
+
+    bb15: {                             
+        StorageDead(_11);                // bb15[0]: scope 1 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:9:35: 9:36
+        StorageDead(_12);                // bb15[1]: scope 1 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:9:36: 9:37
+        StorageLive(_15);                // bb15[2]: scope 3 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:10:11: 10:33
+        StorageLive(_16);                // bb15[3]: scope 3 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:10:11: 10:18
+        _16 = &'10rv (*_10);             // bb15[4]: scope 3 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:10:11: 10:18
+        _15 = const core::str::<impl str>::parse(move _16) -> [return: bb16, unwind: bb17]; // bb15[5]: scope 3 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:10:11: 10:33
+                                         // ty::Const
+                                         // + ty: for<'r> fn(&'r str) -> std::result::Result<u32, <u32 as std::str::FromStr>::Err> {core::str::<impl str>::parse::<u32>}
+                                         // + val: Value(Scalar(Bits { defined: 0, bits: 0 }))
+                                         // mir::Constant
+                                         // + span: /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:10:11: 10:33
+                                         // + ty: for<'r> fn(&'r str) -> std::result::Result<u32, <u32 as std::str::FromStr>::Err> {core::str::<impl str>::parse::<u32>}
+                                         // + literal: const core::str::<impl str>::parse
+    }
+
+    bb16: {                             
+        nop;                             // bb16[0]: scope 3 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:10:11: 10:33
+        StorageDead(_16);                // bb16[1]: scope 3 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:10:32: 10:33
+        _17 = discriminant(_15);         // bb16[2]: scope 3 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:10:5: 13:6
+        _18 = &'11rv _15;                // bb16[3]: scope 3 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:10:5: 13:6
+        _20 = discriminant(_15);         // bb16[4]: scope 3 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:11:9: 11:14
+        switchInt(move _20) -> [0isize: bb19, 1isize: bb20, otherwise: bb22]; // bb16[5]: scope 3 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:11:9: 11:14
+    }
+
+    bb17: {                              // cleanup
+        nop;                             // bb17[0]: scope 3 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:10:11: 10:33
+        goto -> bb14;                    // bb17[1]: scope 3 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:10:11: 10:33
+    }
+
+    bb18: {                             
+        StorageLive(_52);                // bb18[0]: scope 3 at <print macros>:2:27: 2:58
+        StorageLive(_53);                // bb18[1]: scope 3 at <println macros>:3:18: 3:43
+        StorageLive(_54);                // bb18[2]: scope 3 at <println macros>:3:18: 3:43
+        StorageLive(_55);                // bb18[3]: scope 3 at <println macros>:3:18: 3:43
+        _86 = promoted[3];               // bb18[4]: scope 3 at <println macros>:3:18: 3:43
+                                         // mir::Constant
+                                         // + span: <println macros>:3:18: 3:43
+                                         // + ty: &'12rv [&'13rv str; 2]
+                                         // + literal: promoted[3]
+        _55 = &'14rv (*_86);             // bb18[5]: scope 3 at <println macros>:3:18: 3:43
+        _54 = &'15rv (*_55);             // bb18[6]: scope 3 at <println macros>:3:18: 3:43
+        _53 = move _54 as &'16rv [&'17rv str] (Unsize); // bb18[7]: scope 3 at <println macros>:3:18: 3:43
+        StorageDead(_54);                // bb18[8]: scope 3 at <println macros>:3:42: 3:43
+        StorageLive(_61);                // bb18[9]: scope 3 at <println macros>:3:18: 3:43
+        StorageLive(_62);                // bb18[10]: scope 3 at <println macros>:3:18: 3:43
+        StorageLive(_63);                // bb18[11]: scope 3 at <println macros>:3:18: 3:43
+        StorageLive(_64);                // bb18[12]: scope 3 at <println macros>:3:18: 3:43
+        StorageLive(_65);                // bb18[13]: scope 3 at <println macros>:3:18: 3:43
+        StorageLive(_66);                // bb18[14]: scope 3 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:12:60: 12:67
+        _66 = &'18rv _10;                // bb18[15]: scope 3 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:12:60: 12:67
+        _65 = (move _66,);               // bb18[16]: scope 3 at <println macros>:3:18: 3:43
+        StorageDead(_66);                // bb18[17]: scope 3 at <println macros>:3:42: 3:43
+        _67 = discriminant(_65);         // bb18[18]: scope 3 at <println macros>:3:18: 3:43
+        _68 = &'19rv _65;                // bb18[19]: scope 3 at <println macros>:3:18: 3:43
+        ReadForMatch(_68);               // bb18[20]: scope 3 at <println macros>:3:18: 3:43
+        falseEdges -> [real: bb32, imaginary: bb31]; // bb18[21]: scope 3 at <println macros>:3:18: 3:43
+    }
+
+    bb19: {                             
+        ReadForMatch(_18);               // bb19[0]: scope 3 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:10:5: 13:6
+        falseEdges -> [real: bb23, imaginary: bb20]; // bb19[1]: scope 3 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:11:9: 11:14
+    }
+
+    bb20: {                             
+        ReadForMatch(_18);               // bb20[0]: scope 3 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:10:5: 13:6
+        falseEdges -> [real: bb18, imaginary: bb21]; // bb20[1]: scope 3 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:12:9: 12:16
+    }
+
+    bb21: {                             
+        unreachable;                     // bb21[0]: scope 3 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:10:5: 13:6
+    }
+
+    bb22: {                             
+        unreachable;                     // bb22[0]: scope 0 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:14:2: 14:2
+    }
+
+    bb23: {                             
+        StorageLive(_19);                // bb23[0]: scope 3 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:11:12: 11:13
+        _19 = ((_15 as Ok).0: u32);      // bb23[1]: scope 3 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:11:12: 11:13
+        StorageLive(_21);                // bb23[2]: scope 5 at <print macros>:2:27: 2:58
+        StorageLive(_22);                // bb23[3]: scope 5 at <println macros>:3:18: 3:43
+        StorageLive(_23);                // bb23[4]: scope 5 at <println macros>:3:18: 3:43
+        StorageLive(_24);                // bb23[5]: scope 5 at <println macros>:3:18: 3:43
+        _84 = promoted[1];               // bb23[6]: scope 5 at <println macros>:3:18: 3:43
+                                         // mir::Constant
+                                         // + span: <println macros>:3:18: 3:43
+                                         // + ty: &'20rv [&'21rv str; 2]
+                                         // + literal: promoted[1]
+        _24 = &'22rv (*_84);             // bb23[7]: scope 5 at <println macros>:3:18: 3:43
+        _23 = &'23rv (*_24);             // bb23[8]: scope 5 at <println macros>:3:18: 3:43
+        _22 = move _23 as &'24rv [&'25rv str] (Unsize); // bb23[9]: scope 5 at <println macros>:3:18: 3:43
+        StorageDead(_23);                // bb23[10]: scope 5 at <println macros>:3:42: 3:43
+        StorageLive(_30);                // bb23[11]: scope 5 at <println macros>:3:18: 3:43
+        StorageLive(_31);                // bb23[12]: scope 5 at <println macros>:3:18: 3:43
+        StorageLive(_32);                // bb23[13]: scope 5 at <println macros>:3:18: 3:43
+        StorageLive(_33);                // bb23[14]: scope 5 at <println macros>:3:18: 3:43
+        StorageLive(_34);                // bb23[15]: scope 5 at <println macros>:3:18: 3:43
+        StorageLive(_35);                // bb23[16]: scope 5 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:11:53: 11:54
+        _35 = &'26rv _19;                // bb23[17]: scope 5 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:11:53: 11:54
+        _34 = (move _35,);               // bb23[18]: scope 5 at <println macros>:3:18: 3:43
+        StorageDead(_35);                // bb23[19]: scope 5 at <println macros>:3:42: 3:43
+        _36 = discriminant(_34);         // bb23[20]: scope 5 at <println macros>:3:18: 3:43
+        _37 = &'27rv _34;                // bb23[21]: scope 5 at <println macros>:3:18: 3:43
+        ReadForMatch(_37);               // bb23[22]: scope 5 at <println macros>:3:18: 3:43
+        falseEdges -> [real: bb26, imaginary: bb25]; // bb23[23]: scope 5 at <println macros>:3:18: 3:43
+    }
+
+    bb24: {                             
+        StorageDead(_19);                // bb24[0]: scope 3 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:13:5: 13:6
+        StorageDead(_15);                // bb24[1]: scope 3 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:13:6: 13:7
+        _0 = ();                         // bb24[2]: scope 0 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:3:11: 14:2
+        nop;                             // bb24[3]: scope 0 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:3:11: 14:2
+        StorageDead(_10);                // bb24[4]: scope 1 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:14:1: 14:2
+        drop(_1) -> [return: bb38, unwind: bb1]; // bb24[5]: scope 0 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:14:1: 14:2
+    }
+
+    bb25: {                             
+        unreachable;                     // bb25[0]: scope 5 at <println macros>:3:18: 3:43
+    }
+
+    bb26: {                             
+        StorageLive(_38);                // bb26[0]: scope 5 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:1:1: 1:1
+        _38 = (_34.0: &'28rv u32);       // bb26[1]: scope 5 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:1:1: 1:1
+        StorageLive(_39);                // bb26[2]: scope 6 at <print macros>:2:27: 2:58
+        StorageLive(_40);                // bb26[3]: scope 6 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:11:53: 11:54
+        _40 = &'29rv (*_38);             // bb26[4]: scope 6 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:11:53: 11:54
+        StorageLive(_41);                // bb26[5]: scope 6 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:11:53: 11:54
+        _41 = const std::fmt::Display::fmt as for<'r, 's, 't0> fn(&'r u32, &'s mut std::fmt::Formatter<'t0>) -> std::result::Result<(), std::fmt::Error> (ReifyFnPointer); // bb26[6]: scope 6 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:11:53: 11:54
+                                         // ty::Const
+                                         // + ty: for<'r, 's, 't0> fn(&'r u32, &'s mut std::fmt::Formatter<'t0>) -> std::result::Result<(), std::fmt::Error> {<u32 as std::fmt::Display>::fmt}
+                                         // + val: Value(Scalar(Bits { defined: 0, bits: 0 }))
+                                         // mir::Constant
+                                         // + span: /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:11:53: 11:54
+                                         // + ty: for<'r, 's, 't0> fn(&'r u32, &'s mut std::fmt::Formatter<'t0>) -> std::result::Result<(), std::fmt::Error> {<u32 as std::fmt::Display>::fmt}
+                                         // + literal: const std::fmt::Display::fmt
+        _39 = const std::fmt::ArgumentV1::new(move _40, move _41) -> [return: bb27, unwind: bb28]; // bb26[7]: scope 6 at <print macros>:2:27: 2:58
+                                         // ty::Const
+                                         // + ty: for<'b> fn(&'b u32, for<'r, 's, 't0> fn(&'r u32, &'s mut std::fmt::Formatter<'t0>) -> std::result::Result<(), std::fmt::Error>) -> std::fmt::ArgumentV1<'b> {std::fmt::ArgumentV1<'31rv>::new::<u32>}
+                                         // + val: Value(Scalar(Bits { defined: 0, bits: 0 }))
+                                         // mir::Constant
+                                         // + span: <print macros>:2:27: 2:58
+                                         // + ty: for<'b> fn(&'b u32, for<'r, 's, 't0> fn(&'r u32, &'s mut std::fmt::Formatter<'t0>) -> std::result::Result<(), std::fmt::Error>) -> std::fmt::ArgumentV1<'b> {std::fmt::ArgumentV1<'30rv>::new::<u32>}
+                                         // + literal: const std::fmt::ArgumentV1::new
+    }
+
+    bb27: {                             
+        StorageDead(_41);                // bb27[0]: scope 6 at <print macros>:2:57: 2:58
+        StorageDead(_40);                // bb27[1]: scope 6 at <print macros>:2:57: 2:58
+        _33 = [move _39];                // bb27[2]: scope 6 at <println macros>:3:18: 3:43
+        StorageDead(_39);                // bb27[3]: scope 6 at <println macros>:3:42: 3:43
+        StorageDead(_38);                // bb27[4]: scope 5 at <println macros>:3:42: 3:43
+        _32 = &'33rv _33;                // bb27[5]: scope 5 at <println macros>:3:18: 3:43
+        _31 = &'34rv (*_32);             // bb27[6]: scope 5 at <println macros>:3:18: 3:43
+        _30 = move _31 as &'35rv [std::fmt::ArgumentV1<'36rv>] (Unsize); // bb27[7]: scope 5 at <println macros>:3:18: 3:43
+        StorageDead(_31);                // bb27[8]: scope 5 at <println macros>:3:42: 3:43
+        StorageLive(_42);                // bb27[9]: scope 5 at <print macros>:2:27: 2:58
+        StorageLive(_43);                // bb27[10]: scope 5 at <print macros>:2:27: 2:58
+        StorageLive(_44);                // bb27[11]: scope 5 at <print macros>:2:27: 2:58
+        _83 = promoted[0];               // bb27[12]: scope 5 at <print macros>:2:27: 2:58
+                                         // mir::Constant
+                                         // + span: <print macros>:2:27: 2:58
+                                         // + ty: &'37rv [std::fmt::rt::v1::Argument; 1]
+                                         // + literal: promoted[0]
+        _44 = &'38rv (*_83);             // bb27[13]: scope 5 at <print macros>:2:27: 2:58
+        _43 = &'39rv (*_44);             // bb27[14]: scope 5 at <print macros>:2:27: 2:58
+        _42 = move _43 as &'40rv [std::fmt::rt::v1::Argument] (Unsize); // bb27[15]: scope 5 at <print macros>:2:27: 2:58
+        StorageDead(_43);                // bb27[16]: scope 5 at <print macros>:2:57: 2:58
+        _21 = const std::fmt::Arguments::new_v1_formatted(move _22, move _30, move _42) -> [return: bb29, unwind: bb28]; // bb27[17]: scope 5 at <print macros>:2:27: 2:58
+                                         // ty::Const
+                                         // + ty: fn(&'42rv [&'42rv str], &'42rv [std::fmt::ArgumentV1<'42rv>], &'42rv [std::fmt::rt::v1::Argument]) -> std::fmt::Arguments<'42rv> {std::fmt::Arguments<'42rv>::new_v1_formatted}
+                                         // + val: Value(Scalar(Bits { defined: 0, bits: 0 }))
+                                         // mir::Constant
+                                         // + span: <print macros>:2:27: 2:58
+                                         // + ty: fn(&'41rv [&'41rv str], &'41rv [std::fmt::ArgumentV1<'41rv>], &'41rv [std::fmt::rt::v1::Argument]) -> std::fmt::Arguments<'41rv> {std::fmt::Arguments<'41rv>::new_v1_formatted}
+                                         // + literal: const std::fmt::Arguments::new_v1_formatted
+    }
+
+    bb28: {                              // cleanup
+        nop;                             // bb28[0]: scope 5 at <print macros>:2:1: 2:60
+        goto -> bb14;                    // bb28[1]: scope 5 at <print macros>:2:1: 2:60
+    }
+
+    bb29: {                             
+        StorageDead(_42);                // bb29[0]: scope 5 at <print macros>:2:57: 2:58
+        StorageDead(_30);                // bb29[1]: scope 5 at <print macros>:2:57: 2:58
+        StorageDead(_22);                // bb29[2]: scope 5 at <print macros>:2:57: 2:58
+        _14 = const std::io::_print(move _21) -> [return: bb30, unwind: bb28]; // bb29[3]: scope 5 at <print macros>:2:1: 2:60
+                                         // ty::Const
+                                         // + ty: for<'r> fn(std::fmt::Arguments<'r>) {std::io::_print}
+                                         // + val: Value(Scalar(Bits { defined: 0, bits: 0 }))
+                                         // mir::Constant
+                                         // + span: <print macros>:2:1: 2:24
+                                         // + ty: for<'r> fn(std::fmt::Arguments<'r>) {std::io::_print}
+                                         // + literal: const std::io::_print
+    }
+
+    bb30: {                             
+        nop;                             // bb30[0]: scope 5 at <print macros>:2:1: 2:60
+        StorageDead(_21);                // bb30[1]: scope 5 at <print macros>:2:59: 2:60
+        StorageDead(_44);                // bb30[2]: scope 5 at <print macros>:2:59: 2:60
+        StorageDead(_32);                // bb30[3]: scope 5 at <print macros>:2:59: 2:60
+        StorageDead(_33);                // bb30[4]: scope 5 at <print macros>:2:59: 2:60
+        StorageDead(_34);                // bb30[5]: scope 5 at <print macros>:2:59: 2:60
+        StorageDead(_24);                // bb30[6]: scope 5 at <print macros>:2:59: 2:60
+        goto -> bb24;                    // bb30[7]: scope 3 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:10:5: 13:6
+    }
+
+    bb31: {                             
+        unreachable;                     // bb31[0]: scope 3 at <println macros>:3:18: 3:43
+    }
+
+    bb32: {                             
+        StorageLive(_69);                // bb32[0]: scope 3 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:1:1: 1:1
+        _69 = (_65.0: &'43rv &'44rv str); // bb32[1]: scope 3 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:1:1: 1:1
+        StorageLive(_70);                // bb32[2]: scope 7 at <print macros>:2:27: 2:58
+        StorageLive(_71);                // bb32[3]: scope 7 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:12:60: 12:67
+        _71 = &'45rv (*_69);             // bb32[4]: scope 7 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:12:60: 12:67
+        StorageLive(_72);                // bb32[5]: scope 7 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:12:60: 12:67
+        _72 = const std::fmt::Display::fmt as for<'r, 's, 't0> fn(&'r &'48rv str, &'s mut std::fmt::Formatter<'t0>) -> std::result::Result<(), std::fmt::Error> (ReifyFnPointer); // bb32[6]: scope 7 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:12:60: 12:67
+                                         // ty::Const
+                                         // + ty: for<'r, 's, 't0> fn(&'r &'47rv str, &'s mut std::fmt::Formatter<'t0>) -> std::result::Result<(), std::fmt::Error> {<&'47rv str as std::fmt::Display>::fmt}
+                                         // + val: Value(Scalar(Bits { defined: 0, bits: 0 }))
+                                         // mir::Constant
+                                         // + span: /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:12:60: 12:67
+                                         // + ty: for<'r, 's, 't0> fn(&'r &'46rv str, &'s mut std::fmt::Formatter<'t0>) -> std::result::Result<(), std::fmt::Error> {<&'46rv str as std::fmt::Display>::fmt}
+                                         // + literal: const std::fmt::Display::fmt
+        _70 = const std::fmt::ArgumentV1::new(move _71, move _72) -> [return: bb33, unwind: bb35]; // bb32[7]: scope 7 at <print macros>:2:27: 2:58
+                                         // ty::Const
+                                         // + ty: for<'b> fn(&'b &'52rv str, for<'r, 's, 't0> fn(&'r &'52rv str, &'s mut std::fmt::Formatter<'t0>) -> std::result::Result<(), std::fmt::Error>) -> std::fmt::ArgumentV1<'b> {std::fmt::ArgumentV1<'51rv>::new::<&'52rv str>}
+                                         // + val: Value(Scalar(Bits { defined: 0, bits: 0 }))
+                                         // mir::Constant
+                                         // + span: <print macros>:2:27: 2:58
+                                         // + ty: for<'b> fn(&'b &'50rv str, for<'r, 's, 't0> fn(&'r &'50rv str, &'s mut std::fmt::Formatter<'t0>) -> std::result::Result<(), std::fmt::Error>) -> std::fmt::ArgumentV1<'b> {std::fmt::ArgumentV1<'49rv>::new::<&'50rv str>}
+                                         // + literal: const std::fmt::ArgumentV1::new
+    }
+
+    bb33: {                             
+        nop;                             // bb33[0]: scope 7 at <print macros>:2:27: 2:58
+        StorageDead(_72);                // bb33[1]: scope 7 at <print macros>:2:57: 2:58
+        StorageDead(_71);                // bb33[2]: scope 7 at <print macros>:2:57: 2:58
+        _64 = [move _70];                // bb33[3]: scope 7 at <println macros>:3:18: 3:43
+        StorageDead(_70);                // bb33[4]: scope 7 at <println macros>:3:42: 3:43
+        StorageDead(_69);                // bb33[5]: scope 3 at <println macros>:3:42: 3:43
+        _63 = &'54rv _64;                // bb33[6]: scope 3 at <println macros>:3:18: 3:43
+        _62 = &'55rv (*_63);             // bb33[7]: scope 3 at <println macros>:3:18: 3:43
+        _61 = move _62 as &'56rv [std::fmt::ArgumentV1<'57rv>] (Unsize); // bb33[8]: scope 3 at <println macros>:3:18: 3:43
+        StorageDead(_62);                // bb33[9]: scope 3 at <println macros>:3:42: 3:43
+        StorageLive(_73);                // bb33[10]: scope 3 at <print macros>:2:27: 2:58
+        StorageLive(_74);                // bb33[11]: scope 3 at <print macros>:2:27: 2:58
+        StorageLive(_75);                // bb33[12]: scope 3 at <print macros>:2:27: 2:58
+        _85 = promoted[2];               // bb33[13]: scope 3 at <print macros>:2:27: 2:58
+                                         // mir::Constant
+                                         // + span: <print macros>:2:27: 2:58
+                                         // + ty: &'58rv [std::fmt::rt::v1::Argument; 1]
+                                         // + literal: promoted[2]
+        _75 = &'59rv (*_85);             // bb33[14]: scope 3 at <print macros>:2:27: 2:58
+        _74 = &'60rv (*_75);             // bb33[15]: scope 3 at <print macros>:2:27: 2:58
+        _73 = move _74 as &'61rv [std::fmt::rt::v1::Argument] (Unsize); // bb33[16]: scope 3 at <print macros>:2:27: 2:58
+        StorageDead(_74);                // bb33[17]: scope 3 at <print macros>:2:57: 2:58
+        _52 = const std::fmt::Arguments::new_v1_formatted(move _53, move _61, move _73) -> [return: bb36, unwind: bb34]; // bb33[18]: scope 3 at <print macros>:2:27: 2:58
+                                         // ty::Const
+                                         // + ty: fn(&'63rv [&'63rv str], &'63rv [std::fmt::ArgumentV1<'63rv>], &'63rv [std::fmt::rt::v1::Argument]) -> std::fmt::Arguments<'63rv> {std::fmt::Arguments<'63rv>::new_v1_formatted}
+                                         // + val: Value(Scalar(Bits { defined: 0, bits: 0 }))
+                                         // mir::Constant
+                                         // + span: <print macros>:2:27: 2:58
+                                         // + ty: fn(&'62rv [&'62rv str], &'62rv [std::fmt::ArgumentV1<'62rv>], &'62rv [std::fmt::rt::v1::Argument]) -> std::fmt::Arguments<'62rv> {std::fmt::Arguments<'62rv>::new_v1_formatted}
+                                         // + literal: const std::fmt::Arguments::new_v1_formatted
+    }
+
+    bb34: {                              // cleanup
+        nop;                             // bb34[0]: scope 3 at <print macros>:2:1: 2:60
+        goto -> bb14;                    // bb34[1]: scope 3 at <print macros>:2:1: 2:60
+    }
+
+    bb35: {                              // cleanup
+        nop;                             // bb35[0]: scope 7 at <print macros>:2:27: 2:58
+        goto -> bb34;                    // bb35[1]: scope 7 at <print macros>:2:27: 2:58
+    }
+
+    bb36: {                             
+        StorageDead(_73);                // bb36[0]: scope 3 at <print macros>:2:57: 2:58
+        StorageDead(_61);                // bb36[1]: scope 3 at <print macros>:2:57: 2:58
+        StorageDead(_53);                // bb36[2]: scope 3 at <print macros>:2:57: 2:58
+        _14 = const std::io::_print(move _52) -> [return: bb37, unwind: bb34]; // bb36[3]: scope 3 at <print macros>:2:1: 2:60
+                                         // ty::Const
+                                         // + ty: for<'r> fn(std::fmt::Arguments<'r>) {std::io::_print}
+                                         // + val: Value(Scalar(Bits { defined: 0, bits: 0 }))
+                                         // mir::Constant
+                                         // + span: <print macros>:2:1: 2:24
+                                         // + ty: for<'r> fn(std::fmt::Arguments<'r>) {std::io::_print}
+                                         // + literal: const std::io::_print
+    }
+
+    bb37: {                             
+        nop;                             // bb37[0]: scope 3 at <print macros>:2:1: 2:60
+        StorageDead(_52);                // bb37[1]: scope 3 at <print macros>:2:59: 2:60
+        StorageDead(_75);                // bb37[2]: scope 3 at <print macros>:2:59: 2:60
+        StorageDead(_63);                // bb37[3]: scope 3 at <print macros>:2:59: 2:60
+        StorageDead(_64);                // bb37[4]: scope 3 at <print macros>:2:59: 2:60
+        StorageDead(_65);                // bb37[5]: scope 3 at <print macros>:2:59: 2:60
+        StorageDead(_55);                // bb37[6]: scope 3 at <print macros>:2:59: 2:60
+        goto -> bb24;                    // bb37[7]: scope 3 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:10:5: 13:6
+    }
+
+    bb38: {                             
+        StorageDead(_1);                 // bb38[0]: scope 0 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:14:1: 14:2
+        return;                          // bb38[1]: scope 0 at /home/l3r0y/codefiles/playgrounds/rust-playground/hello_world.rs:14:2: 14:2
+    }
+}
