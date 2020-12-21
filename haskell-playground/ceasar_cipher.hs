@@ -54,3 +54,23 @@ crack cs = encode (-f) cs
              f = head (positions (minimum chitab) chitab)
              chitab = [chisqr (rotate n table') table | n <- [0..25]]
              table' = freqs cs
+
+
+-- Additional exercises from chapter --
+sqrsum :: Int -> Int
+sqrsum n = sum $ take n [x^2 | x <- [1..]]
+
+grid :: Int -> Int -> [(Int, Int)]
+grid m n = [(x, y) | x <- [0..m], y <- [0..n]]
+
+replicate :: Int -> a -> [a]
+replicate n c = [c | _ <- [1..n]]
+
+pyths :: Int -> [(Int, Int, Int)]
+pyths n = [(x, y, z) | x <- [1..n], y <- [x..n], z <- [y..n], x^2 + y^2 == z^2]
+
+factors :: Int -> [Int]
+factors n = [n' | n' <- [1..n], n `mod` n' == 0]
+
+perfects :: Int -> [Int]
+perfects n = [n' | n' <- [1..n], n' == (-n') + (sum $ factors n')]
