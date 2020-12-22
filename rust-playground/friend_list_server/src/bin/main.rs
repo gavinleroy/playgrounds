@@ -2,10 +2,7 @@ use std::fs;
 use httparse;
 use std::net::{TcpListener, TcpStream};
 use std::io::prelude::*;
-
-// requests
-// static BASE_REQ: &str = b"GET /";
-// static FRIEND_REQ
+use friend_list_server::ThreadPool;
 
 #[derive(Debug)]
 enum FriendRequest {
@@ -20,11 +17,14 @@ impl FriendRequest {
 
 fn main() {
     let listener = TcpListener::bind("127.0.0.1:8080").unwrap();
+    let pool = ThreadPool::new(10);
 
     for stream in listener.incoming() {
         let stream = stream.unwrap();
 
-        handle_connection(stream);
+        pool.execute(||{
+            handle_connection(stream);
+        });
     }
 }
 
@@ -36,12 +36,8 @@ fn handle_connection(mut stream: TcpStream) -> Result<(), String> {
     // deconstruct into new FriendRequest
     let friend_req = parse_request(&mut buffer)?;
 
+    // match on the friend_req
     serve_friends(&stream, &friend_req)?;
-
-    // let response = format!("HTTP/1.1 200 OK\r\n\r\n{}", contents);
-
-    // stream.write(response.as_bytes()).unwrap();
-    // stream.flush().unwrap();
 
     Ok(())
 }
