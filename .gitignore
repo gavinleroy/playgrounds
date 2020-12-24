@@ -1,4 +1,6 @@
 rust-playground/log/
 rust-playground/nll-facts/
 *.d
+*.o
+*.hi
 */target/
