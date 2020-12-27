@@ -1,13 +1,15 @@
+import System.IO
+
 -- Data --
 
 type Pos = (Int, Int)
 type Board = [Pos]
 
 width :: Int
-width = 10
+width = 15
 
 height :: Int
-height = 10
+height = 15
 
 glider :: Board
 glider = [(4, 2), (2, 3), (4, 3), (3, 4), (4, 4)]
@@ -70,8 +72,9 @@ wait n = sequence_ [return () | _ <- [1..n]]
 life :: Board -> IO ()
 life b = do cls
             showcells b
-            wait 50000
+            wait 500000
             life (nextgen b)
 
 main :: IO ()
-main = life glider
+main = do hSetBuffering stdout NoBuffering
+          life glider
