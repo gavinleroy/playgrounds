@@ -9,7 +9,8 @@ import System.IO
 size :: Int
 size = 3
 
-data Player = O | B | X
+-- NINF, INF used for alpha beta pruning algorithm
+data Player = NINF | O | B | X | INF
               deriving (Eq, Ord, Show)
 
 type Grid = [[Player]]
@@ -30,20 +31,46 @@ prune 0 (Node x _)  = Node x []
 prune n (Node x ts) = Node x [prune (n-1) t | t <- ts]
 
 minimax :: Tree Grid -> Tree (Grid, Player)
-minimax (Node g []) | wins O g    = Node (g, O) []
-                    | wins X g    = Node (g, X) []
-                    | otherwise   = Node (g, B) []
-minimax (Node g ts) | turn g == O = Node (g, minimum ps) ts'
-                    | turn g == X = Node (g, maximum ps) ts'
-                                    where
-                                      ps  = [p | Node (_, p) _ <- ts'] 
-                                      ts' = map minimax ts                    
+minimax (Node g []) 
+  | wins O g    = Node (g, O) []
+  | wins X g    = Node (g, X) []
+  | otherwise   = Node (g, B) []
+minimax (Node g ts) 
+  | turn g == O = Node (g, minimum ps) ts'
+  | turn g == X = Node (g, maximum ps) ts'
+    where
+      ps  = [p | Node (_, p) _ <- ts'] 
+      ts' = map minimax ts                    
+
+abhelper :: Bool -> Player -> Player -> [Tree Grid] -> [Tree (Grid, Player)]
+abhelper _ _ _ []          = []
+abhelper maxpturn a b (t:ts) 
+  | b <= a                 = []
+  | maxpturn               = Node (g', p) ts' : abhelper maxpturn alpha b ts
+  | not maxpturn           = Node (g', p) ts' : abhelper maxpturn a beta ts
+  where
+    alpha            = maximum [NINF, a, p]
+    beta             = minimum [INF, b, p]
+    Node (g', p) ts' = alphabeta a b t
+
+alphabeta :: Player -> Player -> Tree Grid -> Tree (Grid, Player)
+alphabeta _ _ (Node g [])
+  | wins O g  = Node (g, O) []
+  | wins X g  = Node (g, X) []
+  | otherwise = Node (g, B) []
+alphabeta a b (Node g ts) 
+  | turn g == O = Node (g, minimum (b : ps)) ts'
+  | turn g == X = Node (g, maximum (a : ps)) ts'
+    where
+     ps = [p | Node (_, p) _ <- ts']
+     ts' = abhelper (turn g == X) a b ts
 
 bestmove :: Grid -> Player -> Grid
 bestmove g p = head [g' | Node (g', p') _ <- ts, p' == best]
                where
                  tree = prune treedepth (gametree g p)
-                 Node (_, best) ts = minimax tree 
+                 -- Node (_, best) ts = minimax tree 
+                 Node (_, best) ts = alphabeta NINF INF tree
 
 -- Utilities --
 
@@ -138,14 +165,15 @@ prompt :: Player -> String
 prompt p = "Player " ++ show p ++ ", enter your move: "
 
 run' :: Grid -> Player -> IO ()
-run' g p | wins O g  = putStrLn "Player O wins!\n"
-         | wins X g  = putStrLn "Player X wins!\n"
-         | full g    = putStrLn "Draw!\n"
-         | otherwise = do i <- getNat (prompt p)
-                          case move g i p of
-                            []   -> do putStrLn "ERR: Invalid move"
-                                       run' g p
-                            [g'] -> run g' (next p) 
+run' g p 
+  | wins O g  = putStrLn "Player O wins!\n"
+  | wins X g  = putStrLn "Player X wins!\n"
+  | full g    = putStrLn "Draw!\n"
+  | otherwise = do i <- getNat (prompt p)
+                   case move g i p of
+                     []   -> do putStrLn "ERR: Invalid move"
+                                run' g p
+                     [g'] -> run g' (next p) 
 
 run :: Grid -> Player -> IO ()
 run g p = do cls
@@ -154,16 +182,17 @@ run g p = do cls
              run' g p
 
 play' :: Grid -> Player -> IO()
-play' g p | wins O g = putStrLn "Player O wins!\n"
-          | wins X g = putStrLn "Player X wins!\n"
-          | full g   = putStrLn "Draw!\n"
-          | p == O   = do i <- getNat (prompt p)
-                          case move g i p of
-                            []   -> do putStrLn "ERR: Invalid move"
-                                       play' g p
-                            [g'] -> play g' (next p) 
-          | p == X   = do putStr "Player X is thinking ..."
-                          (play $! (bestmove g p)) (next p)
+play' g p 
+  | wins O g = putStrLn "Player O wins!\n"
+  | wins X g = putStrLn "Player X wins!\n"
+  | full g   = putStrLn "Draw!\n"
+  | p == O   = do i <- getNat (prompt p)
+                  case move g i p of
+                    []   -> do putStrLn "ERR: Invalid move"
+                               play' g p
+                    [g'] -> play g' (next p) 
+  | p == X   = do putStr "Player X is thinking ..."
+                  (play $! (bestmove g p)) (next p)
 
 play :: Grid -> Player -> IO ()
 play g p = do cls
