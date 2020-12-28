@@ -72,6 +72,10 @@ bestmove g p = head [g' | Node (g', p') _ <- ts, p' == best]
                  -- Node (_, best) ts = minimax tree 
                  Node (_, best) ts = alphabeta NINF INF tree
 
+treesize :: Tree a -> Int
+treesize (Node _ []) = 0
+treesize (Node _ ts) = sum (map treesize ts) + 1
+
 -- Utilities --
 
 next :: Player -> Player
