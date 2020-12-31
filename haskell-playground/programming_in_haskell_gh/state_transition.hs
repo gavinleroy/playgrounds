@@ -44,3 +44,22 @@ mlabel (Leaf _)   = do n <- fresh
 mlabel (Node l r) = do l' <- mlabel l
                        r' <- mlabel r
                        return (Node l' r')
+
+-- Chapter 12 Exercises --
+data Tree_ a = Leaf_ | Node_ (Tree_ a) a (Tree_ a)
+  deriving Show
+
+instance Functor Tree_ where
+  -- fmap :: (a -> b) -> Tree_ a -> Tree_ b
+    fmap g (Leaf_) = Leaf_
+    fmap g (Node_ l v r) = (Node_ (fmap g l) (g v) (fmap g r))
+
+-- instance Functor ((->) a) where
+  -- fmap :: (b -> c) -> (a -> b) -> (a -> c)
+  -- fmap = (.)
+  
+-- instance Applicative ((->) a) where
+  -- pure :: b -> (a -> b)
+  -- pure = const
+  -- (<*>) :: (a -> b -> c) -> (a -> b) -> (a -> c)
+  -- g <*> h = \x -> g x (h x)
