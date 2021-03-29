@@ -3,4 +3,4 @@ rust-playground/nll-facts/
 *.d
 *.o
 *.hi
-*/target/
+target/
